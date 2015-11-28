@@ -7,14 +7,16 @@ module.exports = {
     path: './priv/static/js',
     filename: 'app.js'
   },
-  loaders: [{
-    test: /\.jsx?$/,
-    exclude: /(node_modules)/,
-    loader: 'babel'
-  }, {
-    test: /\.css$/,
-    loader: 'style-loader!css-loader'
-  }],
+  module: {
+    loaders: [{
+      test: /\.jsx?$/,
+      exclude: /(node_modules)/,
+      loader: 'babel'
+    }, {
+      test: /\.css$/,
+      loader: 'style-loader!css-loader'
+    }]
+  },
   alias: {
     phoenix: 'deps/phoenix/web/static/js/phoenix.js'
   }
